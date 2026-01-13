@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Judson:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "PT Sans", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #09091A;
+    color: #FFFF;
+}
+
+/* Adicione altura mínima para permitir scroll */
+main {
+    min-height: 2500px; /* Ajuste conforme necessário */
+}
+
+/* Responsividade para Celulares */
+@media screen and (max-width: 480px){
+
+}
+
+/* Responsividade para Tablets */
+@media screen and (min-width: 481px) and (max-width: 1024px){
+
+}
+
+/* Responsividade para Desktop */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+
+    /*Header da pagina*/
+    header h1{
+        font-size: 19px;
+        margin-left: 50px;
+    }
+
+    header {
+        position: fixed;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        margin-top: 10px;
+    }
+
+    header a{
+        font-size: 17px;
+        text-decoration: none;
+        color: #FFFF;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    header nav {
+        transform: translateX(900px);
+    }
+
+    header button {
+        margin-left: 20px;
+        border-radius: 20px;
+        border-style: none;
+        width: 80px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    header button:hover {
+        transform: scale(1.2);
+        transition: transform 0.2s ease-in;
+    }
+
+    header a:hover {
+        text-decoration: underline;
+    }
+
+    /*Main da pagina - Inicio*/
+    main img#ImagemDeFundo {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        transform: translateY(-200px);
+        max-height: fit-content;
+        filter: brightness(25%);
+    }
+
+    main h1 {
+        position: relative;
+        z-index: 1;
+        font-size: 40px;
+        text-align: center;
+        transform: translateY(150px);
+    }
+
+    main span#span1 {
+        color: #FD5656;
+    }
+
+    /*Main da pagina - Times*/
+    article#Times h3 {
+        position: relative;
+        z-index: 1;
+        font-size: 35px;
+        text-align: center;
+        transform: translateY(700px);
+    }
+
+    article span#span2 {
+        color: #FAEC81;
+    }
+
+    div#Todos-Times {
+        transform: translateY(800px);
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    a#time img {
+        position: relative;
+        z-index: 1;
+        width: 50px;
+        
+    }
+
+    a#time {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        width: 65px;
+        height: 65px;
+        border-radius: 10px;
+        background: linear-gradient(to bottom, #171C3D, #0b1029);
+
+    }
+
+    a#time:hover {
+        transform: scale(1.1);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    /*Main da pagina - Busca*/
+
+    /*Footer da pagina*/
+
+    footer {
+        text-align: center;
+        margin-bottom: 50px;
+        border-top: 2px solid rgb(30, 22, 68);
+        padding-top: 30px;
+        font-size: 16px;
+    }
+    footer a{
+        text-decoration: none;
+        color: white;
+    }
+
+    footer a:hover {
+        color: rgb(83, 165, 165);
+        transition: color 0.2s ease-in;
+    }
+}
+
+/*Responsividade para PC's Grandes*/
+@media screen and (min-width: 1441px){
+
+}
