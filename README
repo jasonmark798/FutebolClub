@@ -1,0 +1,47 @@
+Documento do Projeto
+
+Introdução
+
+Este projeto tem como objetivo o desenvolvimento de um site de futebol inspirado no conceito de um álbum de figurinhas, focado em cinco times do futebol brasileiro campeões mundiais. A proposta é criar uma aplicação interativa que permita os usuários visualizar jogadores, escudos e informações dos clubes de forma organizada e atrativa.
+O projeto será desenvolvido em grupo e tem como principal finalidade proporcionar experiência prática aos integrantes, simulando um cenário real de desenvolvimento de software, desde o planejamento até a implementação das funcionalidades.
+
+Objetivos
+
+Objetivo Geral
+
+Desenvolver um site interativo de futebol no formato de álbum de figurinhas, utilizando dados reais obtidos por meio de uma API de futebol.
+Objetivos Específicos
+Consumir uma API de futebol para obter informações de jogadores e times;
+Exibir nomes, fotos e dados dos jogadores de forma dinâmica;
+Implementar um frontend responsivo utilizando React e JavaScript;
+Desenvolver um backend em C# para intermediar o consumo da API;
+Trabalhar a colaboração em equipe durante todo o desenvolvimento.
+
+Descrição do Projeto
+
+O sistema funcionará como um álbum virtual de figurinhas, onde cada time terá sua própria seção. Dentro de cada time, os jogadores serão exibidos em formato de cards, simulando figurinhas colecionáveis.
+Os dados, como nome do jogador, posição e imagem, serão obtidos por meio de uma API externa de futebol. Dessa forma, não será necessário o uso de um banco de dados próprio, já que as informações serão consumidas diretamente da API em tempo real.
+Stacks Utilizadas
+Frontend: JavaScript com React
+Backend: C# (.NET)
+API Externa: API de futebol (para dados de jogadores e times)
+Controle de Versão: Git e GitHub
+Ferramentas de Desenvolvimento: VS Code, Visual Studio
+Funcionalidades Principais
+Visualização dos cinco times brasileiros selecionados.
+Listagem de jogadores por time.
+A carta de cada jogador virar para visualizar informações sobre ele
+Exibição de figurinhas com foto e nome do jogador.
+Interface intuitiva e responsiva.
+Consumo dinâmico de dados via API.
+Escopo do Projeto
+Dentro do Escopo
+Consumo de API de futebol;
+Exibição de jogadores e times;
+Interface em formato de álbum de figurinhas;
+Desenvolvimento colaborativo em grupo.
+Fora do Escopo
+Sistema de login e autenticação;
+Persistência de dados em banco de dados;
+Funcionalidades de compra ou troca de figurinhas.
+
