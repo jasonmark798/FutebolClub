@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Front-end/CSS/style.css">
+    <link rel="stylesheet" href="./Front-end/CSS/Desktop.css">
+    <link rel="stylesheet" href="./Front-end/CSS/Celular.css">
+    <link rel="stylesheet" href="./Front-end/CSS/PCs.css">
+    <link rel="stylesheet" href="./Front-end/CSS/Tablets.css">
     <link rel="shortcut icon" href="../IMG/Favicon.png" type="Favicon-Bola">
     <title>Pagina inicial</title>
 </head>
 <body>
     <header>
+        <i id="MenuCel" class="fa-solid fa-bars" onclick="Abrir()"></i><!--Aparece apenas em celulares-->
         <h1>FutebolClub</h1>
-        <nav>
+        <nav id="navegador">
             <a href="#">Placar</a>
             <a href="#">Times</a>
             <button>Login</button>
@@ -18,7 +22,8 @@
     </header>
     <main>
         <h1>Acompanhe o seu time do <span id="span1">coração</span> aqui!</h1>
-        <img id="ImagemDeFundo" src="./IMG/estadio.jpg" alt="ImagemDeFundo">
+        <img id="ImagemDeFundo" src="./IMG/estadio.jpg" alt="ImagemDeFundo"><!--Aparece apenas em PC-->
+        <img id="ImagemDeFundoCelular" src="./IMG/estadio-Celulares.jpg" alt="ImagemDeFundo"><!--Aparece apenas em celulares-->
         <article id="Times">
             <h3>Os times <span id="span2">brasileiros</span> mais acessados</h2>
 
@@ -47,5 +52,6 @@
         <a href="#">Voltar lá pra cima.</a>
     </footer>
 </body>
-    <script src="./Front-end/Script/script.js"></script>
+    <script src="https://kit.fontawesome.com/bebdd48ff9.js" crossorigin="anonymous"></script>
+    <script src="./Front-end/Script/MenuCel.js"></script>
 </html>

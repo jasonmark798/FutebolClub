@@ -1,0 +1,174 @@
+/* Responsividade para Celulares */
+@media screen and (max-width: 480px){
+
+    main {
+        min-height: 1400px;
+    }
+
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /*Header da pagina*/
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+        position: relative;
+        z-index: 1;
+
+    }
+    header h1 {
+        font-size: 25px;
+        padding-top: 5px;
+        transform: translateX(-110px);
+    }
+
+    header i {
+        font-size: 40px;
+        transform: translateX(210px)
+    }
+
+    nav#navegador {
+        display: none;
+    }
+
+
+
+    /*Main da pagina - Inicio*/
+    
+    main h1 {
+        font-size: 27px;
+        text-align: center;
+        transform: translateY(100px);
+        position: relative;
+        z-index: 1;
+    }
+
+    main img#ImagemDeFundo { /*Esconde a imagem do pc*/
+        display: none;
+    }
+
+    img#ImagemDeFundoCelular {
+        position: absolute;
+        z-index: 0;
+        max-width: 100%;
+        filter: brightness(25%);
+        transform: translateY(-125px);
+    }
+
+    /*Main da pagina - Times*/
+
+    article#Times h3 {
+        font-size: 25px;
+        text-align: center;
+        transform: translateY(550px);
+    }
+
+    article#Times div#Todos-Times {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+
+    }
+
+    article#Times img {
+        width: 40px;
+        height: 40px;
+        
+    }
+
+    article#Times a {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(to bottom, #171C3D, #0b1029);
+        transform: translateY(600px);
+    }
+
+    /*Main da pagina - Busca*/
+    
+    article#Buscar h2{
+        font-size: 25px;
+        text-align: center;
+        transform: translateY(700px);
+    }
+
+    article#Buscar h3 {
+        font-size: 20px;
+        text-align: center;
+        transform: translateY(720px);
+    }
+    
+    div#pesquisa {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        transform: translateY(750px);
+    }
+
+    article#Buscar input {
+        width: 300px;
+        height: 50px;
+        padding-left: 20px;
+        border-radius: 10px;
+        border-style: none;
+        background: linear-gradient(to bottom, #171C3D, #0b1029);
+        color: white;
+        font-size: 20px;
+    
+    }
+
+    article#Buscar input::placeholder {
+        color: white;
+    }
+
+    article#Buscar button {
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+        border-style: none;
+        font-size: 20px;
+    }
+
+    button#botao-busca:hover {
+        background-color: #3f3850;
+        color: rgb(255, 255, 255);
+        transition: background-color 0.2s, color 0.2s ease-in;
+    }
+
+    article#Buscar button:active {
+        transform: scale(1.1);
+        transition: transform 0.1s ease-in;
+    }
+
+
+     /*Footer da pagina*/
+
+     footer {
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 50px;
+        border-top: 2px solid white;
+        padding-top: 10px;
+     }
+
+     footer a {
+        text-decoration: none;
+        color: white;
+     }
+
+    footer a:hover {
+        color: rgb(83, 165, 165);
+        transition: color 0.2s ease-in;
+    }
+}
+
+

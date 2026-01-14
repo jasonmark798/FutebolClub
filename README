@@ -21,13 +21,21 @@ Descrição do Projeto
 
 O sistema funcionará como um álbum virtual de figurinhas, onde cada time terá sua própria seção. Dentro de cada time, os jogadores serão exibidos em formato de cards, simulando figurinhas colecionáveis.
 Os dados, como nome do jogador, posição e imagem, serão obtidos por meio de uma API externa de futebol. Dessa forma, não será necessário o uso de um banco de dados próprio, já que as informações serão consumidas diretamente da API em tempo real.
+
 Stacks Utilizadas
+
 Frontend: JavaScript com React
+
 Backend: C# (.NET)
+
 API Externa: API de futebol (para dados de jogadores e times)
+
 Controle de Versão: Git e GitHub
+
 Ferramentas de Desenvolvimento: VS Code, Visual Studio
+
 Funcionalidades Principais
+
 Visualização dos cinco times brasileiros selecionados.
 Listagem de jogadores por time.
 A carta de cada jogador virar para visualizar informações sobre ele
@@ -40,7 +48,9 @@ Consumo de API de futebol;
 Exibição de jogadores e times;
 Interface em formato de álbum de figurinhas;
 Desenvolvimento colaborativo em grupo.
+
 Fora do Escopo
+
 Sistema de login e autenticação;
 Persistência de dados em banco de dados;
 Funcionalidades de compra ou troca de figurinhas.
