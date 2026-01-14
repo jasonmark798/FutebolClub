@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Judson:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Judson:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 *{
     padding: 0;
@@ -16,25 +17,33 @@ body{
     color: #FFFF;
 }
 
+span#span1 {
+        color: #FD5656;
+}
+span#span2 {
+        color: #FAEC81;
+}
+span#span3 {
+        color: #86FF94;
+}
+
 /* Adicione altura mínima para permitir scroll */
-main {
-    min-height: 2500px; /* Ajuste conforme necessário */
-}
 
-/* Responsividade para Celulares */
-@media screen and (max-width: 480px){
 
-}
-
-/* Responsividade para Tablets */
-@media screen and (min-width: 481px) and (max-width: 1024px){
-
-}
 
 /* Responsividade para Desktop */
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
 
+    main {
+    min-height: 1600px; /* Ajuste conforme necessário */
+}
+
     /*Header da pagina*/
+
+    header i {
+        display: none !important;
+    }
+
     header h1{
         font-size: 19px;
         margin-left: 50px;
@@ -88,6 +97,11 @@ main {
         transform: translateY(-200px);
         max-height: fit-content;
         filter: brightness(25%);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    img#ImagemDeFundoCelular { /*Esconde a imagem do celular*/
+        display: none !important;
     }
 
     main h1 {
@@ -96,11 +110,10 @@ main {
         font-size: 40px;
         text-align: center;
         transform: translateY(150px);
+        text-shadow: -24px 6px 9px rgba(0,0,0,0.6);
     }
 
-    main span#span1 {
-        color: #FD5656;
-    }
+
 
     /*Main da pagina - Times*/
     article#Times h3 {
@@ -111,9 +124,7 @@ main {
         transform: translateY(700px);
     }
 
-    article span#span2 {
-        color: #FAEC81;
-    }
+  
 
     div#Todos-Times {
         transform: translateY(800px);
@@ -151,6 +162,66 @@ main {
 
     /*Main da pagina - Busca*/
 
+
+    article#Buscar h2 {
+        position: relative;
+        z-index: 1;
+        font-size: 35px;
+        text-align: center;
+        transform: translateY(950px);
+        text-shadow: -24px 6px 9px rgba(0,0,0,0.6);
+    }
+
+    article#Buscar h3{
+        font-family: "PT Sans", sans-serif;
+        font-size: 20px;
+        text-align: center;
+        transform: translateY(970px);
+        text-shadow: -24px 6px 9px rgba(0,0,0,0.6);
+    }
+
+    input#Procura-Jogador {
+        width: 400px;
+        height: 50px;
+        border-radius: 20px;
+        border-style: none;
+        color: white;
+        background: linear-gradient(to bottom, #171C3D, #0b1029);
+        font-size: 20px;
+        padding-left: 20px;
+    }
+
+    input#Procura-Jogador::placeholder {
+        color: rgb(139, 139, 139);
+    }
+
+    button#botao-busca {
+        width: 150px;
+        height: 50px;
+        border-radius: 15px;
+        border-style: none;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    button#botao-busca:hover {
+        background-color: #3f3850;
+        color: rgb(255, 255, 255);
+        transition: background-color 0.2s, color 0.2s ease-in;
+    }
+
+    button#botao-busca:active {
+        background-color: #15133a;
+    }
+
+    div#pesquisa {
+        transform: translateY(1020px);
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    
     /*Footer da pagina*/
 
     footer {
@@ -171,7 +242,3 @@ main {
     }
 }
 
-/*Responsividade para PC's Grandes*/
-@media screen and (min-width: 1441px){
-
-}
