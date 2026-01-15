@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import TeamList from './components/TeamList';
 import Login from './components/Login';
+import Register from './components/Register';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           </>
         } />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </div>
   );

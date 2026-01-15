@@ -10,7 +10,7 @@ export default function TeamList() {
     const [loadingPlayers, setLoadingPlayers] = useState(false);
 
     useEffect(() => {
-        axios.get('http://localhost:5115/times')
+        axios.get('http://192.168.1.6:5115/times')
             .then(response => {
                 setTeams(response.data);
                 setLoading(false);
@@ -24,9 +24,9 @@ export default function TeamList() {
     const handleTeamClick = (team) => {
         setSelectedTeam(team);
         setLoadingPlayers(true);
-        setPlayers([]); // clear previous
+        setPlayers([]);
 
-        axios.get(`http://localhost:5115/api/jogadores/${team.id}`)
+        axios.get(`http://192.168.1.6:5115/api/jogadores/${team.id}`)
             .then(response => {
                 setPlayers(response.data);
                 setLoadingPlayers(false);
@@ -41,54 +41,55 @@ export default function TeamList() {
 
     return (
         <section id="times" style={styles.section}>
-            <h3 style={styles.heading}>
-                Os times <span style={{ color: '#FAEC81' }}>brasileiros</span> mais acessados
-            </h3>
+            <div className="container">
+                <h3 style={styles.heading}>
+                    Os times <span style={{ color: '#FAEC81' }}>brasileiros</span> mais acessados
+                </h3>
 
-            <div style={styles.grid}>
-                {teams.map(team => (
-                    <div
-                        key={team.id}
-                        style={{ ...styles.card, border: selectedTeam?.id === team.id ? '2px solid #FAEC81' : 'none' }}
-                        onClick={() => handleTeamClick(team)}
-                    >
-                        <img
-                            src={team.escudo}
-                            alt={team.nome}
-                            style={styles.logo}
-                            title={team.nome}
-                        />
-                    </div>
-                ))}
-            </div>
-
-            {selectedTeam && (
-                <div style={styles.playersSection}>
-                    <h2 style={{ color: 'white', marginBottom: '30px', marginTop: '30px' }}>
-                        Jogadores do <span style={{ color: '#FD5656' }}>{selectedTeam.nome}</span>
-                    </h2>
-                    {loadingPlayers ? (
-                        <p style={{ color: '#FAEC81' }}>Carregando elenco...</p>
-                    ) : (
-                        <div style={styles.grid}>
-                            {players.map(player => (
-                                <PlayerCard key={player.id} player={player} />
-                            ))}
-                            {players.length === 0 && <p style={{ color: 'white' }}>Nenhum jogador encontrado.</p>}
+                <div style={styles.grid}>
+                    {teams.map(team => (
+                        <div
+                            key={team.id}
+                            style={{ ...styles.card, border: selectedTeam?.id === team.id ? '2px solid #FAEC81' : 'none' }}
+                            onClick={() => handleTeamClick(team)}
+                        >
+                            <img
+                                src={team.escudo}
+                                alt={team.nome}
+                                style={styles.logo}
+                                title={team.nome}
+                            />
                         </div>
-                    )}
+                    ))}
                 </div>
-            )}
+
+                {selectedTeam && (
+                    <div style={styles.playersSection}>
+                        <h2 style={{ color: 'white', marginBottom: '30px', marginTop: '30px' }}>
+                            Jogadores do <span style={{ color: '#FD5656' }}>{selectedTeam.nome}</span>
+                        </h2>
+                        {loadingPlayers ? (
+                            <p style={{ color: '#FAEC81' }}>Carregando elenco...</p>
+                        ) : (
+                            <div style={styles.grid}>
+                                {players.map(player => (
+                                    <PlayerCard key={player.id} player={player} />
+                                ))}
+                                {players.length === 0 && <p style={{ color: 'white' }}>Nenhum jogador encontrado.</p>}
+                            </div>
+                        )}
+                    </div>
+                )}
+            </div>
         </section>
     );
 }
 
 const styles = {
     section: {
-        padding: '50px 20px',
+        padding: '80px 0',
         textAlign: 'center',
-        marginTop: '50px', // Reduced from 250px
-        minHeight: '400px' // Ensure visibility
+        marginTop: '0'
     },
     heading: {
         fontSize: '30px',

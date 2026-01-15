@@ -29,7 +29,10 @@ public class TimeService : ITimeService
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    var apiResponse = JsonSerializer.Deserialize<ApiResponse<ItemTime>>(content);
+                    Console.WriteLine($"API Response for team {id}: {content}");
+
+                    var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                    var apiResponse = JsonSerializer.Deserialize<ApiResponse<ItemTime>>(content, options);
 
                     var teamData = apiResponse?.Response?.FirstOrDefault()?.Team;
                     if (teamData != null)
@@ -53,6 +56,21 @@ public class TimeService : ITimeService
         });
 
         var results = await Task.WhenAll(tasks);
-        return results.Where(t => t != null).Cast<Time>();
+        var timesList = results.Where(t => t != null).Cast<Time>().ToList();
+
+        if (!timesList.Any())
+        {
+            Console.WriteLine("API Limit reached or no data. Loading fallback mock teams...");
+            return new List<Time>
+            {
+                new Time { Id = 126, Nome = "Sao Paulo", Escudo = "https://media.api-sports.io/football/teams/126.png", AnoFundacao = 1930 },
+                new Time { Id = 127, Nome = "Flamengo", Escudo = "https://media.api-sports.io/football/teams/127.png", AnoFundacao = 1895 },
+                new Time { Id = 131, Nome = "Corinthians", Escudo = "https://media.api-sports.io/football/teams/131.png", AnoFundacao = 1910 },
+                new Time { Id = 119, Nome = "Internacional", Escudo = "https://media.api-sports.io/football/teams/119.png", AnoFundacao = 1909 },
+                new Time { Id = 130, Nome = "Gremio", Escudo = "https://media.api-sports.io/football/teams/130.png", AnoFundacao = 1903 }
+            };
+        }
+
+        return timesList;
     }
 }

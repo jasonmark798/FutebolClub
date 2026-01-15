@@ -3,15 +3,16 @@ import React from 'react';
 export default function Hero() {
     return (
         <div style={styles.container}>
-            <h1 style={styles.title}>
-                Acompanhe o seu time do <span style={{ color: '#FD5656' }}>coração</span> aqui!
-            </h1>
+            <div className="container" style={styles.content}>
+                <h1 style={styles.title}>
+                    Acompanhe o seu time do <span style={{ color: '#FD5656' }}>coração</span> aqui!
+                </h1>
+            </div>
             <img
                 src="/IMG/estadio.jpg"
                 alt="Estádio"
                 style={styles.image}
             />
-            { }
         </div>
     );
 }
@@ -20,11 +21,16 @@ const styles = {
     container: {
         position: 'relative',
         textAlign: 'center',
-        height: '400px',
+        height: '500px', // Increased height
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    content: {
+        position: 'relative',
+        zIndex: 2,
+        width: '100%'
     },
     title: {
         position: 'relative',

@@ -1,20 +1,24 @@
 .login-container {
-    height: 100vh;
+    min-height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(rgba(9, 9, 26, 0.9), rgba(9, 9, 26, 0.9)), url('/IMG/estadio.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .login-card {
     background: rgba(23, 28, 61, 0.7);
     backdrop-filter: blur(10px);
-    padding: 40px;
+    padding: 35px;
     border-radius: 20px;
     width: 100%;
-    max-width: 400px;
+    max-width: 380px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     border: 1px solid rgba(255, 255, 255, 0.1);
     animation: fadeIn 0.5s ease-out;

@@ -5,30 +5,36 @@ import '../App.css';
 export default function Header() {
     return (
         <header style={styles.header}>
-            <h1 style={styles.logo}>FutebolClub</h1>
-            <nav style={styles.nav}>
-                <a href="/#" style={styles.link}>Placar</a>
-                <a href="/#times" style={styles.link}>Times</a>
-                <Link to="/login">
-                    <button style={styles.button}>Login</button>
-                </Link>
-            </nav>
+            <div className="container" style={styles.container}>
+                <h1 style={styles.logo}>FutebolClub</h1>
+                <nav style={styles.nav}>
+                    <a href="/#" style={styles.link}>Placar</a>
+                    <a href="/#times" style={styles.link}>Times</a>
+                    <Link to="/login">
+                        <button style={styles.button}>Login</button>
+                    </Link>
+                </nav>
+            </div>
         </header>
     );
 }
 
 const styles = {
     header: {
-        display: 'flex',
-        alignItems: 'center',
-        padding: '10px 50px',
-        position: 'sticky', // Changed from fixed to sticky
+        position: 'sticky',
         top: 0,
         width: '100%',
-        zIndex: 100, // Increased z-index
+        zIndex: 100,
         backgroundColor: '#09091A',
         color: '#FFFF',
-        boxShadow: '0 2px 10px rgba(0,0,0,0.5)' // Added shadow for visibility
+        boxShadow: '0 2px 10px rgba(0,0,0,0.5)',
+        padding: '10px 0'
+    },
+    container: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        width: '100%'
     },
     logo: {
         fontSize: '24px',

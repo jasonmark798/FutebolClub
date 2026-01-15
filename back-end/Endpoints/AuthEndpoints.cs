@@ -15,5 +15,13 @@ public static class AuthEndpoints
         })
         .WithName("Login")
         .WithTags("Auth");
+
+        app.MapPost("/register", (RegisterDto registerDto, IAuthService authService) =>
+        {
+            var result = authService.Register(registerDto);
+            return result != null ? Results.Ok(result) : Results.BadRequest("Usuário já existe");
+        })
+        .WithName("Register")
+        .WithTags("Auth");
     }
 }
