@@ -1,0 +1,93 @@
+.login-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(9, 9, 26, 0.9), rgba(9, 9, 26, 0.9)), url('/IMG/estadio.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.login-card {
+    background: rgba(23, 28, 61, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.login-title {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: #ccc;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(9, 9, 26, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+    /* Fix padding blowing out width */
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #FAEC81;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #FD5656;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background-color: #ff6b6b;
+    transform: scale(1.02);
+}
+
+.error-message {
+    color: #FD5656;
+    background: rgba(253, 86, 86, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #888;
+    font-size: 0.9rem;
+}
