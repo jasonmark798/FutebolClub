@@ -1,0 +1,18 @@
+# .NET
+bin/
+obj/
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+
+# Configuration Secrets
+appsettings.Development.json
+.env
+
+# NodeJS / Frontend
+node_modules/
+dist/
+build/
+.DS_Store
+thumbs.db
