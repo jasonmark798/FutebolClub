@@ -8,51 +8,53 @@ namespace AlbumFigurinhas.Api.Services;
 public class TimeService : ITimeService
 {
     private readonly IHttpClientFactory _httpClientFactory;
-    private readonly int[] _timesIds = { 126, 127, 131, 119, 130 }; // SPFC, Flamengo, Corinthians, Inter, Gremio
+    private readonly int[] _timesIds = { 118, 119, 120, 121, 124, 126, 127, 
+                                         128, 130, 131, 132, 133, 134, 135,
+                                         136, 147, 794, 1062, 1198, 7848 }; // Todos os clubes da Serie A do Campeonato Brasileiro 2026
 
     public TimeService(IHttpClientFactory httpClientFactory)
     {
         _httpClientFactory = httpClientFactory;
     }
 
-    public async Task<IEnumerable<Time>> ObterTimes()
+    public Task<IEnumerable<Time>> ObterTimes()
+    {
+        return ObterTimesAsync();
+    }
+
+    public async Task<IEnumerable<Time>> ObterTimesAsync()
     {
         var client = _httpClientFactory.CreateClient("ApiFootball");
         var times = new List<Time>();
 
-        // Paralelize requests for better performance
-        var tasks = _timesIds.Select(async id =>
+        foreach (var timeId in _timesIds)
         {
-            try
+            var response = await client.GetAsync($"/teams?id={timeId}");
+            response.EnsureSuccessStatusCode();
+
+            var content = await response.Content.ReadAsStringAsync();
+            var apiResponse = JsonSerializer.Deserialize<ApiResponse<ItemTime>>(content, new JsonSerializerOptions
             {
-                var response = await client.GetAsync($"teams?id={id}");
-                if (response.IsSuccessStatusCode)
+                PropertyNameCaseInsensitive = true
+                
+            });
+            Console.WriteLine($"TimeId: {timeId} | Response.Count: {apiResponse?.Response.Count}");
+            if (apiResponse != null && apiResponse.Response.Any())
+            {
+                var teamDto = apiResponse.Response.First().Team;
+                times.Add(new Time
                 {
-                    var content = await response.Content.ReadAsStringAsync();
-                    var apiResponse = JsonSerializer.Deserialize<ApiResponse<ItemTime>>(content);
-
-                    var teamData = apiResponse?.Response?.FirstOrDefault()?.Team;
-                    if (teamData != null)
-                    {
-                        return new Time
-                        {
-                            Id = teamData.Id,
-                            Nome = teamData.Name,
-                            Escudo = teamData.Logo,
-                            AnoFundacao = teamData.Founded ?? 0
-                        };
-                    }
-                }
-            }
-            catch (Exception ex)
+                    Id = teamDto?.Id ?? 0,
+                    Nome = teamDto?.Name ?? string.Empty,
+                    Escudo = teamDto?.Logo ?? string.Empty,
+                    AnoFundacao = teamDto?.Founded ?? 0
+                });
+            } else
             {
-                // Simple error handling: ignore failed requests or log them
-                Console.WriteLine($"Erro ao buscar time {id}: {ex.Message}");
+                continue;
             }
-            return null;
-        });
+        }
 
-        var results = await Task.WhenAll(tasks);
-        return results.Where(t => t != null).Cast<Time>();
+        return times;
     }
 }

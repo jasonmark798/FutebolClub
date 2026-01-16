@@ -11,7 +11,7 @@ public class ApiResponse<T>
 public class ItemTime
 {
     [JsonPropertyName("team")]
-    public TeamInfo Team { get; set; } = new();
+    public TeamInfo? Team { get; set; }
 }
 
 public class TeamInfo
