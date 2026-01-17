@@ -19,6 +19,7 @@ export default function Hero() {
 const styles = {
     container: {
         position: 'relative',
+        top: 40,
         textAlign: 'center',
         height: '400px',
         overflow: 'hidden',
@@ -28,6 +29,7 @@ const styles = {
     },
     title: {
         position: 'relative',
+        bottom: 50,
         zIndex: 2,
         fontSize: '40px',
         color: '#FFFF',
@@ -42,6 +44,7 @@ const styles = {
         height: '100%',
         objectFit: 'cover',
         zIndex: 1,
-        filter: 'brightness(30%)'
+        filter: 'brightness(20%)'
     }
 };
+

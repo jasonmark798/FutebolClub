@@ -17,7 +17,7 @@ function App() {
             <main>
               <TeamList />
             </main>
-            <footer>
+            <footer style={styles.footer}>
               <p style={{ textAlign: 'center', color: 'white', padding: '20px' }}>© 2026 FutebolClub</p>
             </footer>
           </>
@@ -27,5 +27,14 @@ function App() {
     </div>
   );
 }
+
+const styles = {
+    footer: {
+        marginTop: 200,
+        borderTop: '2px solid white'
+    }
+}
+
+
 
 export default App;

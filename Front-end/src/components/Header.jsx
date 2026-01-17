@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import './Hover.css';
 
 export default function Header() {
     return (
@@ -22,13 +23,12 @@ const styles = {
         display: 'flex',
         alignItems: 'center',
         padding: '10px 50px',
-        position: 'sticky', // Changed from fixed to sticky
+        position: 'fixed', // sticky or fixed?
         top: 0,
         width: '100%',
         zIndex: 100, // Increased z-index
-        backgroundColor: '#09091A',
         color: '#FFFF',
-        boxShadow: '0 2px 10px rgba(0,0,0,0.5)' // Added shadow for visibility
+
     },
     logo: {
         fontSize: '24px',
@@ -36,6 +36,7 @@ const styles = {
         fontFamily: 'PT Sans, sans-serif'
     },
     nav: {
+        marginRight: '150px',
         display: 'flex',
         gap: '20px',
         alignItems: 'center'
